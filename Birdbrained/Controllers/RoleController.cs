@@ -15,14 +15,7 @@ namespace Birdbrained.Controllers
         public ActionResult Index()
         {
 			ApplicationDbContext context = new ApplicationDbContext();
-			if (User.Identity.IsAuthenticated)
-			{
-				if (!isAdminUser())
-				{
-					return RedirectToAction("Index", "Home");
-				}
-			}
-			else
+			if (!User.Identity.IsAuthenticated || !isAdminUser())
 			{
 				return RedirectToAction("Index", "Home");
 			}
