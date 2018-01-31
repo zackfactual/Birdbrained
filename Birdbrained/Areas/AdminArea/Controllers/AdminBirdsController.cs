@@ -10,14 +10,17 @@ using Birdbrained.Models;
 
 namespace Birdbrained.Areas.AdminArea.Controllers
 {
-	[Authorize(Roles = "Admin")]
+	// ensure that only admin can access administrative views and functions
+	[Authorize(Roles = "Admin")] 
 	public class AdminBirdsController : Controller
     {
+		// access database via entity framework
         private BirdbrainedEntities db = new BirdbrainedEntities();
 
         // GET: AdminArea/AdminBirds
         public ActionResult Index()
         {
+			// sort index alphabetically by English Name
 			var birds = from s in db.Birds
 						select s;
 			birds = birds.OrderBy(s => s.EnglishName);
@@ -59,7 +62,6 @@ namespace Birdbrained.Areas.AdminArea.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
             return View(bird);
         }
 
@@ -120,6 +122,7 @@ namespace Birdbrained.Areas.AdminArea.Controllers
             return RedirectToAction("Index");
         }
 
+		// clean up after yourself
         protected override void Dispose(bool disposing)
         {
             if (disposing)

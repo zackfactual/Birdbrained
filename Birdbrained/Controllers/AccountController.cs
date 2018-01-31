@@ -24,13 +24,16 @@ namespace Birdbrained.Controllers
 			context = new ApplicationDbContext();
         }
 
-        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
+		// set ManageController userManager to ApplicationUserManager
+		// set ManageController signInManger to ApplicationSignInManager
+		public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
         {
             UserManager = userManager;
             SignInManager = signInManager;
         }
 
-        public ApplicationSignInManager SignInManager
+		// get/set SignInManager
+		public ApplicationSignInManager SignInManager
         {
             get
             {
@@ -42,6 +45,7 @@ namespace Birdbrained.Controllers
             }
         }
 
+		// get/set UserManager
         public ApplicationUserManager UserManager
         {
             get
@@ -93,9 +97,11 @@ namespace Birdbrained.Controllers
             }
         }
 
-        //
-        // GET: /Account/VerifyCode
-        [AllowAnonymous]
+		// much of the following functionality has yet to be implemented
+
+		//
+		// GET: /Account/VerifyCode
+		[AllowAnonymous]
         public async Task<ActionResult> VerifyCode(string provider, string returnUrl, bool rememberMe)
         {
             // Require that the user has already logged in via username/password or external login

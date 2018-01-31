@@ -12,11 +12,13 @@ namespace Birdbrained.Areas.UserArea.Controllers
 {
     public class UserBirdsController : Controller
     {
-        private BirdbrainedEntities db = new BirdbrainedEntities();
+		// access database via entity framework
+		private BirdbrainedEntities db = new BirdbrainedEntities();
 
         // GET: UserArea/UserBirds
         public ActionResult Index()
         {
+			// sort index alphabetically by English Name
 			var birds = from s in db.Birds
 						select s;
 			birds = birds.OrderBy(s => s.EnglishName);
@@ -38,6 +40,7 @@ namespace Birdbrained.Areas.UserArea.Controllers
             return View(bird);
         }
 
+		// clean up after yourself
         protected override void Dispose(bool disposing)
         {
             if (disposing)

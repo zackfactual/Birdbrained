@@ -20,12 +20,15 @@ namespace Birdbrained.Controllers
         {
         }
 
+		// set ManageController userManager to ApplicationUserManager
+		// set ManageController signInManger to ApplicationSignInManager
         public ManageController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
         {
             UserManager = userManager;
             SignInManager = signInManager;
         }
 
+		// get/set SignInManager
         public ApplicationSignInManager SignInManager
         {
             get
@@ -38,7 +41,8 @@ namespace Birdbrained.Controllers
             }
         }
 
-        public ApplicationUserManager UserManager
+		// get/set UserManager
+		public ApplicationUserManager UserManager
         {
             get
             {
@@ -50,7 +54,8 @@ namespace Birdbrained.Controllers
             }
         }
 
-        //
+		// much of the following functionality has yet to be implemented
+
         // GET: /Manage/Index
         public async Task<ActionResult> Index(ManageMessageId? message)
         {
@@ -75,7 +80,6 @@ namespace Birdbrained.Controllers
             return View(model);
         }
 
-        //
         // POST: /Manage/RemoveLogin
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -99,14 +103,12 @@ namespace Birdbrained.Controllers
             return RedirectToAction("ManageLogins", new { Message = message });
         }
 
-        //
         // GET: /Manage/AddPhoneNumber
         public ActionResult AddPhoneNumber()
         {
             return View();
         }
 
-        //
         // POST: /Manage/AddPhoneNumber
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -130,7 +132,6 @@ namespace Birdbrained.Controllers
             return RedirectToAction("VerifyPhoneNumber", new { PhoneNumber = model.Number });
         }
 
-        //
         // POST: /Manage/EnableTwoFactorAuthentication
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -145,7 +146,6 @@ namespace Birdbrained.Controllers
             return RedirectToAction("Index", "Manage");
         }
 
-        //
         // POST: /Manage/DisableTwoFactorAuthentication
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -160,7 +160,6 @@ namespace Birdbrained.Controllers
             return RedirectToAction("Index", "Manage");
         }
 
-        //
         // GET: /Manage/VerifyPhoneNumber
         public async Task<ActionResult> VerifyPhoneNumber(string phoneNumber)
         {
@@ -169,7 +168,6 @@ namespace Birdbrained.Controllers
             return phoneNumber == null ? View("Error") : View(new VerifyPhoneNumberViewModel { PhoneNumber = phoneNumber });
         }
 
-        //
         // POST: /Manage/VerifyPhoneNumber
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -194,7 +192,6 @@ namespace Birdbrained.Controllers
             return View(model);
         }
 
-        //
         // POST: /Manage/RemovePhoneNumber
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -212,15 +209,13 @@ namespace Birdbrained.Controllers
             }
             return RedirectToAction("Index", new { Message = ManageMessageId.RemovePhoneSuccess });
         }
-
-        //
+		
         // GET: /Manage/ChangePassword
         public ActionResult ChangePassword()
         {
             return View();
         }
-
-        //
+		
         // POST: /Manage/ChangePassword
         [HttpPost]
         [ValidateAntiForgeryToken]

@@ -35,7 +35,8 @@ namespace Birdbrained.Controllers
             return View();
         }
 
-		public Boolean isAdminUser()
+		// determine if user is admin
+		public bool isAdminUser()
 		{
 			if (User.Identity.IsAuthenticated)
 			{

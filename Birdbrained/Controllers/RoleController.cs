@@ -15,6 +15,7 @@ namespace Birdbrained.Controllers
         public ActionResult Index()
         {
 			ApplicationDbContext context = new ApplicationDbContext();
+			// read user role and send them to appropriate view
 			if (!User.Identity.IsAuthenticated || !isAdminUser())
 			{
 				return RedirectToAction("Index", "Home");
@@ -23,7 +24,8 @@ namespace Birdbrained.Controllers
             return View(Roles);
         }
 
-		public Boolean isAdminUser()
+		// determine if user is admin
+		public bool isAdminUser()
 		{
 			if (User.Identity.IsAuthenticated)
 			{
