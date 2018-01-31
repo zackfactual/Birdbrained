@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Birdbrained.Models.Bird>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Birds of Tompkins County, New York</h2>
+
+<p>
+    @Html.ActionLink("Add New Record", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EnglishName)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink(item.EnglishName, "Details", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>

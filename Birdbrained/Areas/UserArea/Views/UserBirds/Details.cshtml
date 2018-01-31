@@ -1,0 +1,33 @@
+﻿@model Birdbrained.Models.Bird
+
+@{
+    ViewBag.Title = @Html.DisplayFor(model => model.EnglishName) + " - Details";
+}
+
+<h2>@Html.DisplayFor(model => model.EnglishName)</h2>
+
+<div>
+    <h4><i>@Html.DisplayFor(model => model.Genus) @Html.DisplayFor(model => model.Species)</i></h4>
+    <hr />
+    <img src="@Model.Photo" alt="" />
+</div>
+
+<div>
+    <br />
+    <p><strong>@Html.DisplayNameFor(model => model.Class):</strong> @Html.DisplayFor(model => model.Class)</p>
+    <p><strong>@Html.DisplayNameFor(model => model.Order):</strong> @Html.DisplayFor(model => model.Order)</p>
+    <p><strong>@Html.DisplayNameFor(model => model.Family):</strong> @Html.DisplayFor(model => model.Family)</p>
+    @{ if (Html.DisplayFor(model => model.Subfamily).ToString().Trim().Length != 0)
+        {
+            <p><strong>@Html.DisplayNameFor(model => model.Subfamily):</strong> @Html.DisplayFor(model => model.Subfamily)</p>
+        }
+    }
+    <p><strong>@Html.DisplayNameFor(model => model.Genus):</strong> @Html.DisplayFor(model => model.Genus)</p>
+    <p><strong>@Html.DisplayNameFor(model => model.Species):</strong> @Html.DisplayFor(model => model.Species)</p>
+    <br />
+</div>
+
+<div>
+    <p><strong>@Html.DisplayNameFor(model => model.LearnMoreHyperlink):</strong> <a href="@Model.LearnMoreHyperlink" target="_blank">@Html.DisplayFor(model => model.LearnMoreHyperlink)</a></p>
+    <p>@Html.ActionLink("Back to Birds of Tompkins County", "Index")</p>
+</div>
