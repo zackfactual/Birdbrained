@@ -223,19 +223,19 @@
       <DependentUpon>BirdbrainedEntities.edmx</DependentUpon>
       <LastGenOutput>BirdbrainedEntities.cs</LastGenOutput>
     </Content>
-    <Content Include="screenshots\Admin Details View.png" />
-    <Content Include="screenshots\Admin Index View.png" />
-    <Content Include="screenshots\AdminArea AdminBirdsController which authorizes admin with full CRUD functionality.png" />
-    <Content Include="screenshots\AdminArea Details View vs UserArea Details View.png" />
-    <Content Include="screenshots\AdminArea Index View vs UserArea Index View.png" />
-    <Content Include="screenshots\Bird partial class generated from ADO.NET Entity Data Model.png" />
-    <Content Include="screenshots\Bird partial class with metadata.png" />
-    <Content Include="screenshots\Birdbrained Excel sheet data source.png" />
-    <Content Include="screenshots\Birdbrained home page.png" />
-    <Content Include="screenshots\Birds table modified in SSMS and attached to Solution.png" />
-    <Content Include="screenshots\Guest and ordinary user Details View.png" />
-    <Content Include="screenshots\Guest and ordinary user Index View.png" />
-    <Content Include="screenshots\UserArea UserBirdsController with Details and Index Views only.png" />
+    <Content Include="screenshots\AdminDetailsView.png" />
+    <Content Include="screenshots\AdminIndexView.png" />
+    <Content Include="screenshots\AdminAreaAdminBirdsControllerThatAuthorizesAdminWithFullCRUDFunctionality.png" />
+    <Content Include="screenshots\AdminAreaDetailsViewVSUserAreaDetailsView.png" />
+    <Content Include="screenshots\AdminAreaIndexViewVSUserAreaIndexView.png" />
+    <Content Include="screenshots\BirdPartialClassGeneratedFromADO.NETEntityDataModel.png" />
+    <Content Include="screenshots\BirdPartialClassWithMetadata.png" />
+    <Content Include="screenshots\ExcelSheetDataSource.png" />
+    <Content Include="screenshots\HomePage.png" />
+    <Content Include="screenshots\BirdsTableModifiedInSSMSAndAttachedToSolution.png" />
+    <Content Include="screenshots\GuestAndOrdinaryUserDetailsView.png" />
+    <Content Include="screenshots\GuestAndOrdinaryUserIndexView.png" />
+    <Content Include="screenshots\UserAreaUserBirdsControllerWithDetailsAndIndexViewsOnly.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <EntityDeploy Include="Models\BirdbrainedEntities.edmx">
